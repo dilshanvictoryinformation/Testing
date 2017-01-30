@@ -94,5 +94,24 @@ namespace Employeeservice
                 return false;
             }
         }
+
+        [OperationContract]
+        public IEnumerable<Employee>GeTEmp()
+        {
+            using (var context = new Test1Entities())
+            {
+                try
+                {
+                    var result = context.Employees.Where(c => c.Emp_id == 2).ToList();
+                    result.ForEach(d => context.Detach(d));
+                    return result;
+                }
+                catch (Exception)
+                {
+
+                    return null;
+                }
+            }
+        }
     }
 }
