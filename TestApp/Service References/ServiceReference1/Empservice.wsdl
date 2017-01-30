@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Empservice" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:58906/Empservice.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:58906/Empservice.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:58906/Empservice.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Empdata" />
+      <xsd:import schemaLocation="http://localhost:58906/Empservice.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://localhost:58906/Empservice.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Empservice_GetEmployee_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployee" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_GetEmployee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_GetCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCity" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_GetCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_save_employee_InputMessage">
+    <wsdl:part name="parameters" element="tns:save_employee" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_save_employee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:save_employeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_Save_city_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save_city" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_Save_city_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Save_cityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_Update_Employee_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_Employee" />
+  </wsdl:message>
+  <wsdl:message name="Empservice_Update_Employee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_EmployeeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Empservice">
+    <wsdl:operation name="GetEmployee">
+      <wsdl:input wsaw:Action="http://tempuri.org/Empservice/GetEmployee" message="tns:Empservice_GetEmployee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Empservice/GetEmployeeResponse" message="tns:Empservice_GetEmployee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/Empservice/GetCity" message="tns:Empservice_GetCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Empservice/GetCityResponse" message="tns:Empservice_GetCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="save_employee">
+      <wsdl:input wsaw:Action="http://tempuri.org/Empservice/save_employee" message="tns:Empservice_save_employee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Empservice/save_employeeResponse" message="tns:Empservice_save_employee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Save_city">
+      <wsdl:input wsaw:Action="http://tempuri.org/Empservice/Save_city" message="tns:Empservice_Save_city_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Empservice/Save_cityResponse" message="tns:Empservice_Save_city_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Employee">
+      <wsdl:input wsaw:Action="http://tempuri.org/Empservice/Update_Employee" message="tns:Empservice_Update_Employee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Empservice/Update_EmployeeResponse" message="tns:Empservice_Update_Employee_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Empservice" type="tns:Empservice">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEmployee">
+      <soap:operation soapAction="http://tempuri.org/Empservice/GetEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCity">
+      <soap:operation soapAction="http://tempuri.org/Empservice/GetCity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="save_employee">
+      <soap:operation soapAction="http://tempuri.org/Empservice/save_employee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Save_city">
+      <soap:operation soapAction="http://tempuri.org/Empservice/Save_city" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Employee">
+      <soap:operation soapAction="http://tempuri.org/Empservice/Update_Employee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Empservice">
+    <wsdl:port name="BasicHttpBinding_Empservice" binding="tns:BasicHttpBinding_Empservice">
+      <soap:address location="http://localhost:58906/Empservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
