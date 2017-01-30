@@ -1,0 +1,9 @@
+﻿<Window x:Class="TestApp.SubDepartmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SubDepartmentWindow" Height="300" Width="300">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left" Margin="93,76,0,0" VerticalAlignment="Top" Height="114" Width="138"/>
+
+    </Grid>
+</Window>
