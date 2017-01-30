@@ -66,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="SubDepartmentViewModel.cs" />
     <Compile Include="SubDepartmentWindow.xaml.cs">
       <DependentUpon>SubDepartmentWindow.xaml</DependentUpon>
     </Compile>
